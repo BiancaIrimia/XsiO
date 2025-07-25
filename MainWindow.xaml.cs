@@ -2,7 +2,6 @@
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace XsiO
 {
@@ -128,7 +127,9 @@ namespace XsiO
                 }
 
                 if (jocCastigat == true)
+                {
                     return true;
+                }
             }
 
             return false;
