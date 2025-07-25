@@ -2,6 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
 
 namespace XsiO
 {
@@ -11,9 +12,9 @@ namespace XsiO
     public partial class MainWindow : Window
     {
         public int[,] matrice = new int[3, 3];
-        private BitmapImage xImage;
-        private BitmapImage oImage;
-        private bool isXTurn = true;
+        private BitmapImage xImagine;
+        private BitmapImage oImagine;
+        private bool esteRandulLuiX = true;
 
         public MainWindow()
         {
@@ -22,8 +23,8 @@ namespace XsiO
             InitializeazaMatrice();
             InitializeazaTablaJoc();
 
-            xImage = new BitmapImage(new Uri("Imagini/x.png", UriKind.Relative));
-            oImage = new BitmapImage(new Uri("Imagini/o.png", UriKind.Relative));
+            xImagine = new BitmapImage(new Uri("Imagini/x.png", UriKind.Relative));
+            oImagine = new BitmapImage(new Uri("Imagini/o.png", UriKind.Relative));            
         }
 
         private void OnCellClick(object sender, RoutedEventArgs e)
@@ -33,23 +34,46 @@ namespace XsiO
                 if (button.Content is Image img)
                 {
                     if (img.Visibility == Visibility.Visible)
+                    {
                         return;
+                    }
 
-                    img.Source = isXTurn ? xImage : oImage;
+                    if (esteRandulLuiX)
+                    {
+                        img.Source = xImagine;
+                    }
+                    else
+                    {
+                        img.Source = oImagine;
+                    }
                     img.Visibility = Visibility.Visible;
 
-                    isXTurn = !isXTurn;
+                    esteRandulLuiX = !esteRandulLuiX;
 
-                    var border = VisualTreeHelper.GetParent(button) as Border;
-                    if (border == null)
-                        return;
-
-                    int row = Grid.GetRow(border);
-                    int col = Grid.GetColumn(border);
-                    matrice[row, col] = isXTurn ? 0 : 1; // 0 for O, 1 for X
-
+                    MarcheazaCelulaJucata(button);
                     VerificaJocCastigat();
                 }
+            }
+        }
+
+        private void MarcheazaCelulaJucata(Button button)
+        {
+            var border = VisualTreeHelper.GetParent(button) as Border;
+            if (border == null)
+            {
+                return;
+            }
+
+            int row = Grid.GetRow(border);
+            int col = Grid.GetColumn(border);
+
+            if (esteRandulLuiX == true)
+            {
+                matrice[row, col] = 0; // X
+            }
+            else
+            {
+                matrice[row, col] = 1; // O
             }
         }
 
@@ -78,7 +102,10 @@ namespace XsiO
                 }
 
                 if (jocCastigat == true)
+                {                   
                     return true;
+                }
+
             }
 
             return false;
@@ -157,8 +184,8 @@ namespace XsiO
                 }
             }
 
-            isXTurn = true;
+            esteRandulLuiX = true;
+            CanvasLinii.Children.Clear();
         }
-
     }
 }

@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:XsiO"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="450" Width="800" Background="PowderBlue">
+    <Grid x:Name="Fereastra">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="Auto" />
@@ -31,72 +31,64 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
-            <Border Grid.Row="0" Grid.Column="0" BorderBrush="Black" BorderThickness="2" Margin="5">
-                <Button x:Name="Button00" Click="OnCellClick" Width="100" Height="100" Background="MediumOrchid" BorderThickness="0">
+            <Border Grid.Row="0" Grid.Column="0" BorderBrush="DarkSlateBlue" BorderThickness="3" Margin="5">
+                <Button x:Name="Button00" Click="OnCellClick" Width="100" Height="100" Background="DarkSlateBlue" BorderThickness="0">
                     <Image x:Name="Image00" Visibility="Collapsed" Stretch="Uniform"/>
                 </Button>
             </Border>
 
-            <Border Grid.Row="0" Grid.Column="1" BorderBrush="Black" BorderThickness="2" Margin="5">
-                <Button x:Name="Button01" Click="OnCellClick" Width="100" Height="100" Background="LightCoral" BorderThickness="0">
+            <Border Grid.Row="0" Grid.Column="1" BorderBrush="DarkSlateBlue" BorderThickness="3" Margin="5">
+                <Button x:Name="Button01" Click="OnCellClick" Width="100" Height="100" Background="DarkSlateBlue" BorderThickness="0">
                     <Image x:Name="Image01" Visibility="Collapsed" Stretch="Uniform"/>
                 </Button>
             </Border>
 
-            <Border Grid.Row="0" Grid.Column="2" BorderBrush="Black" BorderThickness="2" Margin="5">
-                <Button x:Name="Button02" Click="OnCellClick" Width="100" Height="100" Background="LightPink" BorderThickness="0">
+            <Border Grid.Row="0" Grid.Column="2" BorderBrush="DarkSlateBlue" BorderThickness="3" Margin="5">
+                <Button x:Name="Button02" Click="OnCellClick" Width="100" Height="100" Background="DarkSlateBlue" BorderThickness="0">
                     <Image x:Name="Image02" Visibility="Collapsed" Stretch="Uniform"/>
                 </Button>
             </Border>
 
-            <Border Grid.Row="1" Grid.Column="0" BorderBrush="Black" BorderThickness="2" Margin="5">
-                <Button x:Name="Button10" Click="OnCellClick" Width="100" Height="100" Background="LightPink" BorderThickness="0">
+            <Border Grid.Row="1" Grid.Column="0" BorderBrush="DarkSlateBlue" BorderThickness="3" Margin="5">
+                <Button x:Name="Button10" Click="OnCellClick" Width="100" Height="100" Background="DarkSlateBlue" BorderThickness="0">
                     <Image x:Name="Image10" Visibility="Collapsed" Stretch="Uniform"/>
                 </Button>
             </Border>
 
-            <Border Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="2" Margin="5">
-                <Button x:Name="Button11" Click="OnCellClick" Width="100" Height="100" Background="LightPink" BorderThickness="0">
+            <Border Grid.Row="1" Grid.Column="1" BorderBrush="DarkSlateBlue" BorderThickness="3" Margin="5">
+                <Button x:Name="Button11" Click="OnCellClick" Width="100" Height="100" Background="DarkSlateBlue" BorderThickness="0">
                     <Image x:Name="Image11" Visibility="Collapsed" Stretch="Uniform"/>
                 </Button>
             </Border>
 
-            <Border Grid.Row="1" Grid.Column="2" BorderBrush="Black" BorderThickness="2" Margin="5">
-                <Button x:Name="Button12" Click="OnCellClick" Width="100" Height="100" Background="LightPink" BorderThickness="0">
+            <Border Grid.Row="1" Grid.Column="2" BorderBrush="DarkSlateBlue" BorderThickness="3" Margin="5">
+                <Button x:Name="Button12" Click="OnCellClick" Width="100" Height="100" Background="DarkSlateBlue" BorderThickness="0">
                     <Image x:Name="Image12" Visibility="Collapsed" Stretch="Uniform"/>
                 </Button>
             </Border>
 
-            <Border Grid.Row="2" Grid.Column="0" BorderBrush="Black" BorderThickness="2" Margin="5">
-                <Button x:Name="Button20" Click="OnCellClick" Width="100" Height="100" Background="LightPink" BorderThickness="0">
+            <Border Grid.Row="2" Grid.Column="0" BorderBrush="DarkSlateBlue" BorderThickness="3" Margin="5">
+                <Button x:Name="Button20" Click="OnCellClick" Width="100" Height="100" Background="DarkSlateBlue" BorderThickness="0">
                     <Image x:Name="Image20" Visibility="Collapsed" Stretch="Uniform"/>
                 </Button>
             </Border>
 
-            <Border Grid.Row="2" Grid.Column="1" BorderBrush="Black" BorderThickness="2" Margin="5">
-                <Button x:Name="Button21" Click="OnCellClick" Width="100" Height="100" Background="LightCoral" BorderThickness="0">
+            <Border Grid.Row="2" Grid.Column="1" BorderBrush="DarkSlateBlue" BorderThickness="3" Margin="5">
+                <Button x:Name="Button21" Click="OnCellClick" Width="100" Height="100" Background="DarkSlateBlue" BorderThickness="0">
                     <Image x:Name="Image21" Visibility="Collapsed" Stretch="Uniform"/>
                 </Button>
             </Border>
 
-            <Border Grid.Row="2" Grid.Column="2" BorderBrush="Black" BorderThickness="2" Margin="5">
-                <Button x:Name="Button22" Click="OnCellClick" Width="100" Height="100" Background="LightCoral" BorderThickness="0">
+            <Border Grid.Row="2" Grid.Column="2" BorderBrush="DarkSlateBlue" BorderThickness="3" Margin="5">
+                <Button x:Name="Button22" Click="OnCellClick" Width="100" Height="100" Background="DarkSlateBlue" BorderThickness="0">
                     <Image x:Name="Image22" Visibility="Collapsed" Stretch="Uniform"/>
                 </Button>
             </Border>
         </Grid>
 
-        <Button x:Name="JoacaDinNou"
-        Grid.Row="2"
-        Grid.Column="1"
-        Content="Joaca din nou"
-        Click="JoacaDinNou_Click"
-        Width="200" Height="30"
-        FontSize="12"
-        FontWeight="SemiBold"
-        Background="#FF007ACC"
-        Foreground="White"
-        BorderThickness="0">
+        <Canvas x:Name="CanvasLinii" IsHitTestVisible="False"/>
+
+        <Button x:Name="JoacaDinNou" Grid.Row="2" Grid.Column="1" Content="Joaca din nou" Click="JoacaDinNou_Click" Width="200" Height="30" FontSize="12" FontWeight="SemiBold" Background="Blue" Foreground="White" BorderThickness="0.1">
         </Button>
 
     </Grid>
