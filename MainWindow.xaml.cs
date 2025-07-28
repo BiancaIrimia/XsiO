@@ -27,55 +27,9 @@ namespace XsiO
             oImagine = new BitmapImage(new Uri("Imagini/o.png", UriKind.Relative));            
         }
 
-        private void OnCellClick(object sender, RoutedEventArgs e)
-        {
-            if (sender is Button button)
-            {
-                if (button.Content is Image img)
-                {
-                    if (img.Visibility == Visibility.Visible)
-                    {
-                        return;
-                    }
+        //5. Adauga functionalitate casutei (butonului)
 
-                    if (esteRandulLuiX)
-                    {
-                        img.Source = xImagine;
-                    }
-                    else
-                    {
-                        img.Source = oImagine;
-                    }
-                    img.Visibility = Visibility.Visible;
-
-                    esteRandulLuiX = !esteRandulLuiX;
-
-                    MarcheazaCelulaJucata(button);
-                    VerificaJocCastigat();
-                }
-            }
-        }
-
-        private void MarcheazaCelulaJucata(Button button)
-        {
-            var border = VisualTreeHelper.GetParent(button) as Border;
-            if (border == null)
-            {
-                return;
-            }
-
-            int row = Grid.GetRow(border);
-            int col = Grid.GetColumn(border);
-
-            if (esteRandulLuiX == true)
-            {
-                matrice[row, col] = 0; // X
-            }
-            else
-            {
-                matrice[row, col] = 1; // O
-            }
-        }
+        //6. Marcheaza celula jucata
 
         private void VerificaJocCastigat()
         {
@@ -156,11 +110,7 @@ namespace XsiO
             return false;
         }
 
-        private void JoacaDinNou_Click(object sender, RoutedEventArgs e)
-        {
-            InitializeazaMatrice();
-            InitializeazaTablaJoc();
-        }
+        //7. Adauga functionalitate butonului de reincepere joc
 
         private void InitializeazaMatrice()
         {
@@ -185,9 +135,7 @@ namespace XsiO
                     }
                 }
             }
-
             esteRandulLuiX = true;
-            CanvasLinii.Children.Clear();
         }
     }
 }
