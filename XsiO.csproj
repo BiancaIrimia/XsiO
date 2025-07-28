@@ -9,11 +9,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Imagini\bg.png" />
     <None Remove="Imagini\o.png" />
     <None Remove="Imagini\x.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Imagini\bg.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Imagini\o.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
