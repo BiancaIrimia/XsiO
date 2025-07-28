@@ -11,6 +11,7 @@ namespace XsiO
     public partial class MainWindow : Window
     {
         public int[,] matrice = new int[3, 3];
+        private BitmapImage backgroundCardImage;
         private BitmapImage xImagine;
         private BitmapImage oImagine;
         private bool esteRandulLuiX = true;
